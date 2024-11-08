@@ -1,0 +1,20 @@
+server:
+  port: 8085
+
+
+spring:
+  application:
+    name: tax-calculation-service
+  data:
+    mongodb:
+      database: tax-calculation-service
+      port: '27017'
+      uri: mongodb://localhost:27017/tax-calculation-service?authSource=admin
+      host: localhost
+  kafka:
+    topic:
+      name: service-log-topic
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
